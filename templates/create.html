@@ -1,0 +1,32 @@
+<html>
+<head>
+  <link rel="stylesheet" href="{{ url_for('static', filename='main.css') }}">
+</head>
+<p>
+POLLID:{{id_}}
+
+<form method="POST" action="/{{id_}}/create" >
+<label for="id">ID</label>
+
+<input type="integer" name="id_" id="id_" value="{{id_}}" ><br>
+<label for="name">NAME</label>
+
+<input type="text" name="name" id="name" required/ ><br>
+<label for="c1">CHOICE1</label>
+
+<input type="text" name="c1" id="c1" required/ ><br>
+
+<label for="c2">CHOICE2</label>
+
+<input type="text" name="c2" id="c2" required/ ><br>
+
+<label for="c3">CHOICE3</label>
+<input type="text" name="c3" id="c3" required/ ><br>
+<input type="date" name="t" id="t" required/ ><br>
+<label for="t">SET DEADLINE</label>
+<input type="submit" value="Go">
+ </p>
+
+</form>
+</html>
+

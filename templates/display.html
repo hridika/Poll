@@ -1,0 +1,12 @@
+<html>
+<head>
+  <link rel="stylesheet" href="{{ url_for('static', filename='main.css') }}">
+</head>
+<p>WELCOME {{name}}!
+<form method="post" action="/{{id_}}/c">
+<input type="submit" value="CREATE POLL"><br>
+</form>
+<form method="post" action="/{{id_}}/v">
+<input type="submit" value="VIEW YOUR POLLS">
+</form></p>
+</html>

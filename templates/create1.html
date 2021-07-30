@@ -1,0 +1,19 @@
+<html>
+<head>
+  <link rel="stylesheet" href="{{ url_for('static', filename='main.css') }}">
+</head>
+<p>
+CHOOSE YOUR CHOICE
+<form method="POST" action="/{{poll}}/result_">
+<input type="radio" name="c" id="{{c1}}" value="{{c1}}" >
+<label for="{{c1}}">{{c1}}</label><br>
+<input type="radio"  name="c" id="{{c2}}" value="{{c2}}" >
+<label for="{{c2}}">{{c2}}</label><br>
+<input type="radio" name="c" id="{{c3}}" value="{{c3}}" >
+<label for="{{c3}}">{{c3}}</label><br>
+<input type="submit" value="VOTE" >
+</form>
+COPY THE LINK FROM HERE AND SHARE 
+<a href="/{{poll}}/share">SHARE</a></p>
+
+</html>
