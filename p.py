@@ -64,7 +64,7 @@ def result_(poll):
    print(str(l[0]))
    print(str(datetime.date.today()))
    if str(datetime.date.today())>str(l[0]):
-     return """TIME FOR POLL ENDED"""
+     return render_template("Time.html")
    c=request.form['c']
    print(c)
    d[c]=d[c]+1
@@ -82,7 +82,7 @@ def result_(poll):
    cursor.execute("""select name,choice_1,choice_2,choice_3,c1,c2,c3,result from POLL where name=?""",[poll])
    p=cursor.fetchone()
    name,choice_1,choice_2,choice_3,c1,c2,c3,result=p
-   return """<html>THANKS FOR VOTING</html>"""
+   return render_template("Thank.html")
    
 @app.route("/<id_>/c",methods=["GET","POST"])
 def c(id_):
