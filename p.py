@@ -6,20 +6,6 @@ app=Flask(__name__)
 
 @app.route("/",methods=["GET"])
 def func():
- return render_template("index.html")
-def max(a,b,c):
- if(a>=b and a>=c):
-  return a
- elif(b>=a and b>=c):
-  return b
- elif(c>=a and c>=b):
-  return c
- return 1
- 
-d=dict()
-
-@app.route("/signin", methods=["POST"])
-def fun():
    connect=sqlite3.connect('p.db')
    cursor=connect.cursor() 
    cursor.execute("""CREATE TABLE IF NOT EXISTS user(
@@ -42,6 +28,21 @@ dt datetime default current_timestamp,
 foreign key(user_id)references user(id)
 )
     ;""")
+   return render_template("index.html")
+ 
+def max(a,b,c):
+ if(a>=b and a>=c):
+  return a
+ elif(b>=a and b>=c):
+  return b
+ elif(c>=a and c>=b):
+  return c
+ return 1
+ 
+d=dict()
+
+@app.route("/signin", methods=["POST"])
+def fun():
    return render_template("login.html")
 
 @app.route("/<poll>/result",methods=["GET","POST"])
